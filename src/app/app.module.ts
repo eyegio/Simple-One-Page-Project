@@ -11,6 +11,8 @@ import { SecondSectionComponent } from './components/second-section/second-secti
 import { ThirdSectionComponent } from './components/third-section/third-section.component';
 
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,18 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
     NavbarComponent,
     FirstSectionComponent,
     SecondSectionComponent,
-    ThirdSectionComponent
+    ThirdSectionComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     Ng2PageScrollModule.forRoot(),
-    NgbModule.forRoot(), // Add Bootstrap module here.
+    NgbModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCFXLvCTe0u1YPAxwbtT3UpDTpA2-RYDT4'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
