@@ -1,22 +1,46 @@
-<nav class="navbar fixed-top navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed">
-  </button>
-  <a class="navbar-brand" href="#">{{brand}}</a>
+<div id="toggle" (click)="toggleNav()" [class.toggled]="navToggle === true">
+  <ul>
+    <li>
+      <a href="#" >
+        <span class="line l1"></span>
+        <span class="line l3"></span>
+      </a>
+    </li>
+  </ul>
+</div>
 
-  <div class="collapse navbar-collapse" [ngClass]="{collapse: isCollapsed}">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" (click)="isCollapsed = true">
-        <a class="nav-link" pageScroll href="#first-section">Link</a>
+<section id="full-screen-nav" class="panel" [class.active]="navToggle === true">
+  <nav id="nav">
+    <ul>
+      <li class="nav-item" (click)="toggleNav()">
+        <a pageScroll href="#first-section">First Section
+          <span class="desc">
+            This is a a description one.
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="isCollapsed = true">
-        <a class="nav-link" pageScroll href="#second-section">Link</a>
+      <li class="nav-item" (click)="toggleNav()">
+        <a pageScroll href="#second-section">Second Section
+          <span class="desc">
+            This is a a description two.
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="isCollapsed = true">
-        <a class="nav-link" pageScroll href="#third-section">Link</a>
+      <li class="nav-item" (click)="toggleNav()">
+        <a pageScroll href="#third-section">Third Section
+          <span class="desc">
+            This is a a description three.
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="isCollapsed = true">
-        <a class="nav-link" pageScroll href="#map-section">Link</a>
+      <li class="nav-item" (click)="toggleNav()">
+        <a pageScroll href="#map-section">Contact
+        <span class="desc">
+          Come here and we come here and we can take a coffee together!
+        </span>
+        </a>
       </li>
     </ul>
-  </div>
-</nav>
+  </nav>
+</section>
+

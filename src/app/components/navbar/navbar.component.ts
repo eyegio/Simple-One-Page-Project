@@ -8,16 +8,17 @@ import {PageScrollConfig} from 'ng2-page-scroll';
 })
 export class NavbarComponent implements OnInit {
 
-  brand = 'GIO';
-  isCollapsed = true;
+  public navToggle: boolean = false;
 
   constructor() {
     PageScrollConfig.defaultScrollOffset = 50;
     PageScrollConfig.defaultDuration = 800;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  toggleNav(){
+    this.navToggle = !this.navToggle;
+  }
 }
 
