@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routing } from './app.routing';
@@ -11,6 +12,8 @@ import { FirstSectionComponent } from './components/first-section/first-section.
 import { SecondSectionComponent } from './components/second-section/second-section.component';
 import { ThirdSectionComponent } from './components/third-section/third-section.component';
 import { DetailComponent } from './components/third-section/detail/detail.component';
+import { FormComponent } from './components/form/form.component';
+
 
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -27,11 +30,13 @@ import { HomeComponent } from './components/home/home.component';
     ThirdSectionComponent,
     MapComponent,
     DetailComponent,
-    HomeComponent
+    HomeComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     Ng2PageScrollModule.forRoot(),
     NgbModule.forRoot(),
